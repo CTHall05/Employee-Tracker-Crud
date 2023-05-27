@@ -1,8 +1,9 @@
 import React from 'react';
+import '../App.css';
 
 export default function EmployeeTable({ employees, onDelete, onPatch }) {
   return (
-    <table>
+    <table className='table'>
       <thead>
         <tr>
           <th>ID</th>
@@ -26,10 +27,10 @@ export default function EmployeeTable({ employees, onDelete, onPatch }) {
               <td>{employee.years_of_employment}</td>
               <td>{employee.role}</td>
               <td>
-              <button onClick={() => onPatch(employee)}>Edit</button>
+              <button className='button-design' onClick={() => onPatch(employee)}>Edit</button>
               </td>
               <td>
-              <button onClick={() => onDelete(employee.id)}>Delete</button>
+              <button className='button-design' onClick={() => onDelete(employee.id)}>Delete</button>
               </td>
             </tr>
           );

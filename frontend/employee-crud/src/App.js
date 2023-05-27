@@ -87,6 +87,7 @@ function App() {
 
   return (
     <div className="App">
+      <header>Employee Tracker</header>
       <EmployeeTable 
         className="table" 
         employees={employees} 

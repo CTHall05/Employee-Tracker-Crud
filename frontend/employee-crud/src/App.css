@@ -1,12 +1,35 @@
-.App {
-  text-align: center;
-  background-color: #61dafb;
+:root {
+  --primary_colour: #FC5756;
+  --white: #ffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Crete Round', serif;
+  gap: 50px;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary_colour);
 }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--primary_colour);
+  font-size: 50px;
+  width: 100vw;
+  height: 10vh;
+  font-weight: bolder;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,24 +37,31 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  background-color: #61dafb;
-}
-
 .App-link {
   color: #61dafb;
 }
 
 .table {
-  height: 500px;
+  height: 150px;
+  width: 50vw;
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.button-design {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 80px;
+  height: 25px;
+  background-color: var(--primary_colour);
+  color: white;
+}
+
+.button-design:hover {
+  border: 1px black solid;
+  font-weight: 900;
 }
 
 @keyframes App-logo-spin {
