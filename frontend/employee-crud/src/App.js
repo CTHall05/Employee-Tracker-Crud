@@ -1,10 +1,33 @@
 import { useState, useEffect } from 'react';
 import EmployeeTable from './Components/EmployeeTable';
+import CreateEmployeeForm from './Components/CreateEmployeeForm';
 import './App.css';
 
 function App() {
 
+  const [showForm, setShowForm] = useState(false);
   const [employees, setEmployees] = useState([]);
+
+  const handleCreateEmployee = () => {
+    setShowForm(!showForm);
+  };
+
+  const handleFormSubmit = (employeeData) => {
+    // Send a POST request to the server to create the employee
+    fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(employeeData),
+    })
+      .then((response) => response.json())
+      .then((newEmployee) => {
+        setEmployees([...employees, newEmployee]);
+        setShowForm(false); // Hide the form after submission
+      })
+      .catch((error) => console.log('Error creating employee:', error));
+  };
 
   useEffect(() => {
     fetch('http://localhost:3000/users')
@@ -87,7 +110,11 @@ function App() {
 
   return (
     <div className="App">
+
+
       <header>Employee Tracker</header>
+      <button onClick={handleCreateEmployee}>Create Employee</button>
+      {showForm && <CreateEmployeeForm onCreate={handleFormSubmit}/>}
       <EmployeeTable 
         className="table" 
         employees={employees} 
