@@ -51,7 +51,7 @@ header {
 }
 
 /* Add Employee Button */
-.add_employee_button {
+.employee_button {
   background-color: var(--primary_colour);
   color: var(--white);
   border-radius: 5px;
@@ -62,9 +62,30 @@ header {
   font-weight: 900;
 }
 
-.add_employee_button:hover {
+.employee_button:hover {
   background-color: var(--white);
   color: var(--primary_colour);
+}
+
+/* Create Employee Form Styles */
+.create_employee_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  min-width: 250px;
+  gap: 5px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--white);
+  height: 30vh;
+}
+
+.form_label_container {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
 }
 
 .button-design {

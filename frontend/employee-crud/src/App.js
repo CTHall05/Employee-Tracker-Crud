@@ -113,8 +113,13 @@ function App() {
 
 
       <header>Employee Tracker</header>
-      <button className="add_employee_button"onClick={handleCreateEmployee}>Add Employee</button>
-      {showForm && <CreateEmployeeForm onCreate={handleFormSubmit}/>}
+      <button className="employee_button"onClick={handleCreateEmployee}>Add Employee</button>
+      {showForm && ( 
+        <div>
+          <button  className="employee_button" onClick={handleCreateEmployee}>Cancel</button>
+          <CreateEmployeeForm onCreate={handleFormSubmit}/>
+        </div>
+      )}
       <EmployeeTable 
         className="table" 
         employees={employees} 
